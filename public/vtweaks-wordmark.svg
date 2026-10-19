@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 145" fill="none">
+  <defs><linearGradient id="ink" x1="0" y1="25" x2="0" y2="120" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#dcdcf6"/></linearGradient><mask id="cut"><path fill="#fff" d="M0 0h1060v145H0z"/><path fill="#000" d="M488 69h131v5H488zM906 69h132v5H906z"/></mask></defs>
+  <g fill="url(#ink)" mask="url(#cut)">
+    <path d="M15 25h30l36 70 36-70h30l-51 95H66z"/>
+    <path d="M175 25h125v23h-47v72h-31V48h-47z"/>
+    <path d="M325 25h28l15 63 19-63h28l19 63 15-63h28l-26 95h-31l-19-60-19 60h-31z"/>
+    <path d="M500 25h115v23h-85v13h70v23h-70v13h85v23H500z"/>
+    <path fill-rule="evenodd" d="M637 120l44-95h32l44 95h-31l-7-17h-44l-7 17zm47-39h26l-13-31z" clip-rule="evenodd"/>
+    <path d="M785 25h30v35l42-35h42l-56 45 59 50h-44l-43-39v39h-30z"/>
+    <path d="M938 25h107v23h-84v13h58c18 0 29 10 29 28v4c0 18-12 27-29 27h-88V97h87V84h-58c-18 0-29-10-29-28v-5c0-17 12-26 27-26z"/>
+  </g>
+</svg>

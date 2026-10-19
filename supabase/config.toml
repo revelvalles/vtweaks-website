@@ -1,0 +1,15 @@
+project_id = "rybwxspbtleugpfjdybx"
+
+[functions.vt-billing]
+verify_jwt = true
+entrypoint = "./functions/vt-billing/index.ts"
+
+[functions.vt-stripe-webhook]
+# Stripe authenticates using its signature over the raw request body.
+verify_jwt = false
+entrypoint = "./functions/vt-stripe-webhook/index.ts"
+
+[functions.vt-checkout-status]
+# Public readiness of fixed test products; no customer data or mutations.
+verify_jwt = false
+entrypoint = "./functions/vt-checkout-status/index.ts"

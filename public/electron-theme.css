@@ -1,0 +1,26 @@
+/* VTweaks additive refinement. Load AFTER existing renderer CSS.
+   No layout replacement, network, IPC, backend or storage behavior. */
+body.dark,body:not(.light) { --vt-refine-focus:oklch(.73 .15 295);--vt-refine-selection:oklch(.33 .07 295);--vt-refine-muted:oklch(.72 .015 285);--vt-refine-text:oklch(.95 .004 285); }
+body.light { --vt-refine-focus:oklch(.51 .21 294);--vt-refine-selection:oklch(.93 .03 295);--vt-refine-muted:oklch(.48 .02 285);--vt-refine-text:oklch(.22 .01 285); }
+:is(#app,#v-dialog,#tweak-drawer,#ai-panel,.v-select-menu) { font-family:'Segoe UI',system-ui,sans-serif;line-height:1.5;letter-spacing:0; }
+:is(#app,#v-dialog,#tweak-drawer,#ai-panel,.v-select-menu) ::selection { background:var(--vt-refine-selection);color:var(--vt-refine-text); }
+:is(#app,#v-dialog,#tweak-drawer,#ai-panel,.v-select-menu) :is(button,input,select,summary,[tabindex]):focus-visible { outline:2px solid var(--vt-refine-focus);outline-offset:3px; }
+#app :is(.v-card-head,.v-section-heading,.v-home-section-label) { gap:16px; }
+#app :is(.v-note,.v-hardware,.v-home-controls-note) { line-height:1.6; }
+#app :is(.v-gauge-reading strong,.v-temp-measure strong,.v-chip) { font-variant-numeric:tabular-nums;letter-spacing:0; }
+#app :is(.v-home-action,.v-summary-row,.v-tweak-mini) { min-width:0; }
+#app :is(.v-home-action small,.v-summary-copy,.v-note,.v-hardware) { overflow-wrap:anywhere; }
+#app :is(.v-btn,.v-icon-btn,.v-home-action,.v-mode,.ni) { transition:background-color 150ms ease,border-color 150ms ease,opacity 150ms ease; }
+#app :is(button:disabled,[aria-disabled=true]) { cursor:not-allowed;opacity:.55; }
+#app :is(.is-unavailable,[data-state=unknown],[data-state=partial]) { color:var(--vt-refine-muted); }
+#app .v-gauge.is-unavailable .v-gauge-fill { opacity:0; }
+#app :is(.v-field input,.v-field select,.v-filters input,.v-filters select) { min-height:38px; }
+#app :is(.v-home-action-heading strong,.v-sensor-title h3) { font-weight:600; }
+#app .v-sensor-history { gap:10px; }
+#app :is(.v-toggle,.v-switch) { transition:background-color 160ms ease; }
+:is(#app,#splash) .vt-busy-dots i { animation:vt-refine-pending .95s ease-in-out infinite; }
+:is(#app,#splash) .vt-busy-dots i:nth-child(2) { animation-delay:.13s; }
+:is(#app,#splash) .vt-busy-dots i:nth-child(3) { animation-delay:.26s; }
+@keyframes vt-refine-pending {0%,65%,100%{transform:translateY(0)}30%{transform:translateY(-3px)}}
+@media(prefers-reduced-motion:reduce) { :is(#app,#splash,#v-dialog,#tweak-drawer,.v-select-menu) *, :is(#app,#splash) *::before, :is(#app,#splash) *::after { animation:none!important;transition:none!important;scroll-behavior:auto!important; } }
+

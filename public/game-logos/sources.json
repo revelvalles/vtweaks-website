@@ -1,0 +1,14 @@
+{
+  "retrieved": "2026-10-06",
+  "notice": "Original publisher assets used to identify games. All game trademarks belong to their respective owners. No sponsorship or game-specific optimization certification is implied.",
+  "assets": [
+    {"file":"valorant.png","publisher":"Riot Games","page":"https://www.riotgames.com/en/press","source":"https://www.riotgames.com/darkroom/original/529d413f0d04b52fa43ac4e0afae762a:5079209ca6c46089fe07ff56ed1cf3d1/valorant-logos.zip","archiveEntry":"VALORANT Logos/Logotype/V_Logotype_Off-White.png"},
+    {"file":"counter-strike-2.svg","publisher":"Valve","page":"https://www.counter-strike.net/home?l=english","source":"https://cdn.fastly.steamstatic.com/apps/csgo/images/csgo_react/global/logo_counterstrike2_white.svg"},
+    {"file":"fortnite.svg","publisher":"Epic Games","page":"https://www.fortnite.com/","source":"https://cms-assets.unrealengine.com/AVzjeqAbLRKi3W5jq0CAvz/ovBnvmuJSxO5xtgXZcef"},
+    {"file":"warzone.png","publisher":"Activision","page":"https://www.callofduty.com/warzone","source":"https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/warzone2/common/cod-warzone-logo.png"},
+    {"file":"apex-legends.svg","publisher":"Electronic Arts / Respawn","page":"https://www.ea.com/games/apex-legends/apex-legends","source":"https://drop-assets.ea.com/images/F1GeiHWipvvKj7GtUVP3U/819fe8e0b02c2e85f3ac441af58c2fbb/Apex-legends_Nav-logo_white.svg"},
+    {"file":"rocket-league.svg","publisher":"Psyonix / Epic Games","page":"https://www.rocketleague.com/?lang=en","source":"https://cms-assets.unrealengine.com/AVzjeqAbLRKi3W5jq0CAvz/cmb81xhrh3wme07o5moa47rcj"},
+    {"file":"minecraft.svg","publisher":"Mojang / Microsoft","page":"https://www.minecraft.net/en-us","source":"https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/logos/Global-Header_MCCB-Logo_300x51.svg"},
+    {"file":"gta-v.svg","publisher":"Rockstar Games","page":"https://www.rockstargames.com/gta-v","source":"https://media-rockstargames-com.akamaized.net/mfe-r19/prod/__common/img/732efc56393d89076732e76b0a2b55b2.svg"}
+  ]
+}

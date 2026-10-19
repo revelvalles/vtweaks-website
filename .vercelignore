@@ -1,0 +1,29 @@
+# Local metadata and generated output; Vercel builds from source.
+.git/
+.vercel/
+.lovable/
+export-provenance.json
+node_modules/
+dist/
+dist-ssr/
+.output/
+.vinxi/
+.tanstack/
+.nitro/
+.wrangler/
+logs/
+*.log
+# Local review captures are not website assets; public/ images remain included.
+/*.png
+/*.jpg
+
+# Credentials must be supplied through Vercel project settings.
+.env
+.env.*
+.dev.vars
+*.local
+secrets/
+*.pem
+*.key
+*.p12
+*.pfx
