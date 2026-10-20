@@ -37,6 +37,18 @@ React 19, TypeScript, TanStack Start, Vite, Tailwind y Nitro. El proyecto usa SS
 
 Las funciones y migraciones de `supabase/` documentan la continuación de una base de datos existente; este repositorio no contiene un respaldo completo de sus tablas iniciales ni datos de usuarios. No es necesario desplegarlas para editar el frontend.
 
+## Términos y políticas
+
+El apartado `/legal` reúne términos, aviso de privacidad, licencia de la app, compras y reembolsos y cookies. También se accede desde el pie global y los enlaces del registro y checkout. Se conserva `/privacidad`.
+
+Los textos están **en revisión para un lanzamiento con referencia a México**. Falta confirmar identidad, domicilio y contacto del titular, condiciones comerciales y derechos de distribución de la ISO. El contenido se edita en `src/lib/legal-content.ts`; la investigación, fuentes y pendientes se documentan en [docs/LEGAL_REVIEW.md](docs/LEGAL_REVIEW.md). Los enlaces informativos no equivalen a una aceptación contractual registrada en servidor. Las rutas llevan `noindex` mientras sean borradores; revisar `src/lib/legal-metadata.ts` al aprobar la versión final.
+
+## Idiomas
+
+El selector junto al logotipo permite cambiar entre español e inglés sin recargar ni borrar los formularios. Guarda la preferencia `vtweaks.language` en el navegador; si el almacenamiento está bloqueado, el cambio sigue funcionando durante la sesión. No modifica la cuenta ni los correos del servicio.
+
+`src/lib/i18n.tsx` contiene el proveedor y las plantillas dinámicas; `src/lib/locales/en.json` contiene la traducción inglesa de la interfaz, mensajes y documentos legales. Los textos españoles son la fuente. Al añadir texto visible nuevo, añade su traducción al diccionario y usa `useLanguage().t` en el componente. Los identificadores, datos del usuario y rutas permanecen independientes del idioma.
+
 ## Publicación
 
 La publicación actual se realiza desde esta fuente mediante la CLI de Vercel y su proyecto existente. Subir código a GitHub no configura por sí solo el despliegue automático.

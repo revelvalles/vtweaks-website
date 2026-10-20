@@ -101,7 +101,7 @@ html[data-page-visible="false"] .brand-orbit *, html[data-page-visible="false"] 
 .app-image-toolbar i, .demo-label i { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #bca1ff; box-shadow: 0 0 12px #bca1ff88; }
 .app-image-toolbar button { min-height: 36px; }
 .app-image-frame { position: relative; overflow: hidden; border: 1px solid #c1b0e133; background: #11121c; isolation: isolate; }
-.app-image-frame > img { display: block; width: 100%; height: auto; aspect-ratio: 1.65; object-fit: cover; object-position: top; filter: brightness(.86); transform: translate(var(--image-x, 0px), var(--image-y, 0px)) scale(1.012); transition: transform .45s var(--motion-ease); }
+.app-image-frame > img { display: block; width: 100%; height: auto; aspect-ratio: 1320 / 820; object-fit: contain; object-position: top; filter: brightness(.86); transform: translate(var(--image-x, 0px), var(--image-y, 0px)) scale(1.012); transition: transform .45s var(--motion-ease); }
 .image-hotspot { position: absolute; display: grid; place-items: center; width: 36px; height: 36px; padding: 0; translate: -50% -50%; color: #150b28; background: #d3bdff; border: 1px solid #f2eaff; border-radius: 50%; box-shadow: 0 0 0 6px #bca1ff1f, 0 0 30px #b38bff70; cursor: pointer; transition: box-shadow .3s, background .3s; }
 .image-hotspot:hover, .image-hotspot[aria-expanded="true"] { box-shadow: 0 0 0 10px #bca1ff26, 0 0 40px #b38bff88; background: #eee3ff; }
 main .image-hotspot:active { transform: scale(.97); }

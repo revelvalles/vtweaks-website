@@ -13,13 +13,18 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdministracionRouteImport } from './routes/administracion'
 import { Route as AyudaRouteImport } from './routes/ayuda'
 import { Route as ComoFuncionaRouteImport } from './routes/como-funciona'
+import { Route as ComprasYReembolsosRouteImport } from './routes/compras-y-reembolsos'
+import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as CuentaRouteImport } from './routes/cuenta'
 import { Route as DisponibilidadRouteImport } from './routes/disponibilidad'
 import { Route as GuiasRouteImport } from './routes/guias'
 import { Route as JuegosRouteImport } from './routes/juegos'
+import { Route as LegalRouteImport } from './routes/legal'
+import { Route as LicenciaRouteImport } from './routes/licencia'
 import { Route as PlanesRouteImport } from './routes/planes'
 import { Route as PrivacidadRouteImport } from './routes/privacidad'
 import { Route as RecuperarRouteImport } from './routes/recuperar'
+import { Route as TerminosRouteImport } from './routes/terminos'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -39,6 +44,16 @@ const AyudaRoute = AyudaRouteImport.update({
 const ComoFuncionaRoute = ComoFuncionaRouteImport.update({
   id: '/como-funciona',
   path: '/como-funciona',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComprasYReembolsosRoute = ComprasYReembolsosRouteImport.update({
+  id: '/compras-y-reembolsos',
+  path: '/compras-y-reembolsos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CuentaRoute = CuentaRouteImport.update({
@@ -61,6 +76,16 @@ const JuegosRoute = JuegosRouteImport.update({
   path: '/juegos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LegalRoute = LegalRouteImport.update({
+  id: '/legal',
+  path: '/legal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LicenciaRoute = LicenciaRouteImport.update({
+  id: '/licencia',
+  path: '/licencia',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PlanesRoute = PlanesRouteImport.update({
   id: '/planes',
   path: '/planes',
@@ -76,32 +101,47 @@ const RecuperarRoute = RecuperarRouteImport.update({
   path: '/recuperar',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TerminosRoute = TerminosRouteImport.update({
+  id: '/terminos',
+  path: '/terminos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/administracion': typeof AdministracionRoute
   '/ayuda': typeof AyudaRoute
   '/como-funciona': typeof ComoFuncionaRoute
+  '/compras-y-reembolsos': typeof ComprasYReembolsosRoute
+  '/cookies': typeof CookiesRoute
   '/cuenta': typeof CuentaRoute
   '/disponibilidad': typeof DisponibilidadRoute
   '/guias': typeof GuiasRoute
   '/juegos': typeof JuegosRoute
+  '/legal': typeof LegalRoute
+  '/licencia': typeof LicenciaRoute
   '/planes': typeof PlanesRoute
   '/privacidad': typeof PrivacidadRoute
   '/recuperar': typeof RecuperarRoute
+  '/terminos': typeof TerminosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/administracion': typeof AdministracionRoute
   '/ayuda': typeof AyudaRoute
   '/como-funciona': typeof ComoFuncionaRoute
+  '/compras-y-reembolsos': typeof ComprasYReembolsosRoute
+  '/cookies': typeof CookiesRoute
   '/cuenta': typeof CuentaRoute
   '/disponibilidad': typeof DisponibilidadRoute
   '/guias': typeof GuiasRoute
   '/juegos': typeof JuegosRoute
+  '/legal': typeof LegalRoute
+  '/licencia': typeof LicenciaRoute
   '/planes': typeof PlanesRoute
   '/privacidad': typeof PrivacidadRoute
   '/recuperar': typeof RecuperarRoute
+  '/terminos': typeof TerminosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -109,13 +149,18 @@ export interface FileRoutesById {
   '/administracion': typeof AdministracionRoute
   '/ayuda': typeof AyudaRoute
   '/como-funciona': typeof ComoFuncionaRoute
+  '/compras-y-reembolsos': typeof ComprasYReembolsosRoute
+  '/cookies': typeof CookiesRoute
   '/cuenta': typeof CuentaRoute
   '/disponibilidad': typeof DisponibilidadRoute
   '/guias': typeof GuiasRoute
   '/juegos': typeof JuegosRoute
+  '/legal': typeof LegalRoute
+  '/licencia': typeof LicenciaRoute
   '/planes': typeof PlanesRoute
   '/privacidad': typeof PrivacidadRoute
   '/recuperar': typeof RecuperarRoute
+  '/terminos': typeof TerminosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -124,39 +169,54 @@ export interface FileRouteTypes {
     | '/administracion'
     | '/ayuda'
     | '/como-funciona'
+    | '/compras-y-reembolsos'
+    | '/cookies'
     | '/cuenta'
     | '/disponibilidad'
     | '/guias'
     | '/juegos'
+    | '/legal'
+    | '/licencia'
     | '/planes'
     | '/privacidad'
     | '/recuperar'
+    | '/terminos'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/administracion'
     | '/ayuda'
     | '/como-funciona'
+    | '/compras-y-reembolsos'
+    | '/cookies'
     | '/cuenta'
     | '/disponibilidad'
     | '/guias'
     | '/juegos'
+    | '/legal'
+    | '/licencia'
     | '/planes'
     | '/privacidad'
     | '/recuperar'
+    | '/terminos'
   id:
     | '__root__'
     | '/'
     | '/administracion'
     | '/ayuda'
     | '/como-funciona'
+    | '/compras-y-reembolsos'
+    | '/cookies'
     | '/cuenta'
     | '/disponibilidad'
     | '/guias'
     | '/juegos'
+    | '/legal'
+    | '/licencia'
     | '/planes'
     | '/privacidad'
     | '/recuperar'
+    | '/terminos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -164,13 +224,18 @@ export interface RootRouteChildren {
   AdministracionRoute: typeof AdministracionRoute
   AyudaRoute: typeof AyudaRoute
   ComoFuncionaRoute: typeof ComoFuncionaRoute
+  ComprasYReembolsosRoute: typeof ComprasYReembolsosRoute
+  CookiesRoute: typeof CookiesRoute
   CuentaRoute: typeof CuentaRoute
   DisponibilidadRoute: typeof DisponibilidadRoute
   GuiasRoute: typeof GuiasRoute
   JuegosRoute: typeof JuegosRoute
+  LegalRoute: typeof LegalRoute
+  LicenciaRoute: typeof LicenciaRoute
   PlanesRoute: typeof PlanesRoute
   PrivacidadRoute: typeof PrivacidadRoute
   RecuperarRoute: typeof RecuperarRoute
+  TerminosRoute: typeof TerminosRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -203,6 +268,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComoFuncionaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/compras-y-reembolsos': {
+      id: '/compras-y-reembolsos'
+      path: '/compras-y-reembolsos'
+      fullPath: '/compras-y-reembolsos'
+      preLoaderRoute: typeof ComprasYReembolsosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cuenta': {
       id: '/cuenta'
       path: '/cuenta'
@@ -231,6 +310,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof JuegosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/legal': {
+      id: '/legal'
+      path: '/legal'
+      fullPath: '/legal'
+      preLoaderRoute: typeof LegalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/licencia': {
+      id: '/licencia'
+      path: '/licencia'
+      fullPath: '/licencia'
+      preLoaderRoute: typeof LicenciaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/planes': {
       id: '/planes'
       path: '/planes'
@@ -252,6 +345,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RecuperarRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/terminos': {
+      id: '/terminos'
+      path: '/terminos'
+      fullPath: '/terminos'
+      preLoaderRoute: typeof TerminosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -260,13 +360,18 @@ const rootRouteChildren: RootRouteChildren = {
   AdministracionRoute: AdministracionRoute,
   AyudaRoute: AyudaRoute,
   ComoFuncionaRoute: ComoFuncionaRoute,
+  ComprasYReembolsosRoute: ComprasYReembolsosRoute,
+  CookiesRoute: CookiesRoute,
   CuentaRoute: CuentaRoute,
   DisponibilidadRoute: DisponibilidadRoute,
   GuiasRoute: GuiasRoute,
   JuegosRoute: JuegosRoute,
+  LegalRoute: LegalRoute,
+  LicenciaRoute: LicenciaRoute,
   PlanesRoute: PlanesRoute,
   PrivacidadRoute: PrivacidadRoute,
   RecuperarRoute: RecuperarRoute,
+  TerminosRoute: TerminosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

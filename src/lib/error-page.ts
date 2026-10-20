@@ -18,14 +18,23 @@ export function renderErrorPage(): string {
   </head>
   <body>
     <div class="card">
-      <h1>No pudimos cargar esta página</h1>
-      <p>Intenta cargarla de nuevo o vuelve al inicio.</p>
+      <h1 id="error-title">No pudimos cargar esta página</h1>
+      <p id="error-description">Intenta cargarla de nuevo o vuelve al inicio.</p>
       <div class="actions">
-        <button class="primary" onclick="location.reload()">Reintentar</button>
-        <a class="secondary" href="/">Volver al inicio</a>
+        <button id="error-retry" class="primary" onclick="location.reload()">Reintentar</button>
+        <a id="error-home" class="secondary" href="/">Volver al inicio</a>
       </div>
     </div>
+    <script>
+      try {
+        if (localStorage.getItem('vtweaks.language') === 'en') {
+          document.documentElement.lang = 'en';
+          document.title = 'We could not load the page · VTweaks';
+          const copy = {'error-title':'We could not load this page','error-description':'Try loading the page again or return home.','error-retry':'Try again','error-home':'Back to home'};
+          for (const [id, text] of Object.entries(copy)) { const node = document.getElementById(id); if (node) node.textContent = text; }
+        }
+      } catch {}
+    </script>
   </body>
 </html>`;
 }
-

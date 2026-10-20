@@ -1,12 +1,6 @@
+import { useLanguage } from "@/lib/i18n";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import {
-  ArrowUpRight,
-  ArrowRight,
-  Monitor,
-  History,
-  SlidersHorizontal,
-  Cpu,
-} from "lucide-react";
+import { ArrowUpRight, ArrowRight, Monitor, History, SlidersHorizontal, Cpu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { pageHead } from "@/lib/metadata";
 import { DesktopDemo } from "@/components/vtweaks/DesktopDemo";
@@ -26,6 +20,7 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 function Home() {
+  const { t: tr } = useLanguage();
   return (
     <>
       <section className="hero" aria-labelledby="hero-title">
@@ -34,46 +29,52 @@ function Home() {
           <div className="hero-copy" data-reveal>
             <span className="release-pill">
               <span className="release-dot" />
-              WINDOWS x64 <span> / </span> v3.2 · En desarrollo
+              {tr("WINDOWS x64 ")}
+              <span> / </span>
+              {tr(" v3.2 · En desarrollo")}
             </span>
             <h1 id="hero-title">
-              Tu Windows.
+              {tr("Tu Windows.")}
               <br />
-              <DitherText>Bajo control.</DitherText>
+              <DitherText>{tr("Bajo control.")}</DitherText>
             </h1>
             <p className="hero-description">
-              Consulta lo que está activo. Entiende cada ajuste.
+              {tr("Consulta lo que está activo. Entiende cada ajuste.")}
               <br />
-              Mantén tu equipo con los cambios que tú eliges.
+              {tr("Mantén tu equipo con los cambios que tú eliges.")}
             </p>
             <div className="hero-actions">
               <Button asChild>
                 <a href="#dentro-app">
-                  Explorar la app <ArrowRight />
+                  {tr("Explorar la app ")}
+                  <ArrowRight />
                 </a>
               </Button>
               <Button variant="outline" asChild>
                 <Link to="/como-funciona">
-                  Cómo funciona <ArrowUpRight />
+                  {tr("Cómo funciona ")}
+                  <ArrowUpRight />
                 </Link>
               </Button>
             </div>
             <p className="platform-note">
               <Monitor size={12} />
-              Windows · x64 <span>—</span> Instalador público en preparación
+              {tr("Windows · x64 ")}
+              <span>—</span>
+              {tr(" Instalador público en preparación")}
             </p>
             <div className="hero-capabilities">
               <span>
                 <SlidersHorizontal />
-                Inspecciona
+                {tr("Inspecciona")}
               </span>
               <span>
                 <Cpu />
-                Ajusta
+                {tr("Ajusta")}
               </span>
               <span>
                 <History />
-                Restaura
+                {tr("Restaura")}
               </span>
             </div>
           </div>
@@ -82,14 +83,14 @@ function Home() {
             <div className="product-stage-label">
               <span>
                 <i />
-                UN VISTAZO A VTWEAKS
+                {tr("UN VISTAZO A VTWEAKS")}
               </span>
-              <span>Prueba los controles ↗</span>
+              <span>{tr("Prueba los controles ↗")}</span>
             </div>
             <DesktopDemo />
             <div className="product-stage-foot">
-              <span>INTERFAZ INTERACTIVA</span>
-              <span>Cambia de vista, prueba un ajuste o abre la guía.</span>
+              <span>{tr("INTERFAZ INTERACTIVA")}</span>
+              <span>{tr("Cambia de vista, prueba un ajuste o abre la guía.")}</span>
             </div>
           </div>
         </div>
@@ -97,23 +98,21 @@ function Home() {
       <div className="wrap proof-strip">
         <div>
           <SlidersHorizontal />
-          <span>Estados de los ajustes, visibles</span>
+          <span>{tr("Estados de los ajustes, visibles")}</span>
         </div>
         <div>
           <Cpu />
-          <span>
-            Cambios que puedes revisar
-          </span>
+          <span>{tr("Cambios que puedes revisar")}</span>
         </div>
         <div>
           <History />
-          <span>Originales registrados al aplicar</span>
+          <span>{tr("Originales registrados al aplicar")}</span>
         </div>
       </div>
       <section className="wrap section" id="dentro-app">
         <SectionHead
           kicker="DENTRO DE VTWEAKS"
-          title="Tus ajustes, con contexto."
+          title={tr("Tus ajustes, con contexto.")}
           description="Estado detectado, compatibilidad y resultado. La información que necesitas para decidir."
         />
         <FeatureExplorer />
@@ -121,17 +120,20 @@ function Home() {
       <section className="soft-band">
         <div className="wrap section story-layout">
           <div className="story-copy">
-            <span className="eyebrow">PRUÉBALO AQUÍ</span>
+            <span className="eyebrow">{tr("PRUÉBALO AQUÍ")}</span>
             <h2>
-              Aplica un ajuste.
-              <br />Vuelve cuando quieras.
+              {tr("Aplica un ajuste.")}
+              <br />
+              {tr("Vuelve cuando quieras.")}
             </h2>
             <p>
-              Desactiva las capturas en segundo plano y observa el resultado.
-              Para volver al estado anterior, mantén pulsado «Revertir».
+              {tr(
+                "Desactiva las capturas en segundo plano y observa el resultado. Para volver al estado anterior, mantén pulsado «Revertir».",
+              )}
             </p>
             <Link to="/como-funciona" className="text-link">
-              El proceso completo <ArrowUpRight />
+              {tr("El proceso completo ")}
+              <ArrowUpRight />
             </Link>
           </div>
           <TaskDemo />
@@ -143,9 +145,9 @@ function Home() {
             kicker="ANTES DE LA PARTIDA"
             title={
               <>
-                Prepara Windows.
+                {tr("Prepara Windows.")}
                 <br />
-                Después, a jugar.
+                {tr("Después, a jugar.")}
               </>
             }
             description="Revisa el modo de juego, las capturas y lo que sigue trabajando en segundo plano. Sin promesas de FPS."
@@ -156,27 +158,29 @@ function Home() {
       <section className="wrap section">
         <SectionHead
           kicker="PAQUETES Y PRECIOS"
-          title="Elige el alcance."
+          title={tr("Elige el alcance.")}
           description="Solo la app, una instalación limpia o las dos juntas. Un pago, sin suscripciones. Checkout de prueba sin cobro real."
         />
         <PlanCards />
         <p className="small-note">
-          Oferta prevista para el lanzamiento. El instalador público y la activación comercial aún
-          no están disponibles.
+          {tr(
+            "Oferta prevista para el lanzamiento. El instalador público y la activación comercial aún no están disponibles.",
+          )}
         </p>
       </section>
       <section className="soft-band">
         <div className="wrap section faq-layout">
           <div className="faq-intro">
-            <span className="eyebrow">ANTES DE EMPEZAR</span>
+            <span className="eyebrow">{tr("ANTES DE EMPEZAR")}</span>
             <h2>
-              Las dudas
+              {tr("Las dudas")}
               <br />
-              importantes.
+              {tr("importantes.")}
             </h2>
-            <p>Compatibilidad, permisos y el alcance real de los cambios.</p>
+            <p>{tr("Compatibilidad, permisos y el alcance real de los cambios.")}</p>
             <Link to="/ayuda" className="text-link">
-              Centro de ayuda <ArrowUpRight />
+              {tr("Centro de ayuda ")}
+              <ArrowUpRight />
             </Link>
           </div>
           <FAQList />
@@ -184,17 +188,18 @@ function Home() {
       </section>
       <section className="wrap availability-band">
         <div>
-          <span className="eyebrow">SIGUE EL DESARROLLO</span>
+          <span className="eyebrow">{tr("SIGUE EL DESARROLLO")}</span>
           <h2>
-            La próxima versión,
+            {tr("La próxima versión,")}
             <br />
-            sin perder el contexto.
+            {tr("sin perder el contexto.")}
           </h2>
-          <p>Requisitos, disponibilidad y notas de la app.</p>
+          <p>{tr("Requisitos, disponibilidad y notas de la app.")}</p>
         </div>
         <Button variant="ink" asChild>
           <Link to="/disponibilidad">
-            Consultar disponibilidad <ArrowUpRight />
+            {tr("Consultar disponibilidad ")}
+            <ArrowUpRight />
           </Link>
         </Button>
       </section>
